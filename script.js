@@ -101,7 +101,28 @@ function showLoadingPhase() {
 function showOfferPhase() {
   document.getElementById("phase-loading").classList.remove("active");
   document.getElementById("phase-offer").classList.add("active");
+  
+  // Ajusta o link do botão final preservando as UTMs recebidas
+  setupUtmLink();
+
   startTimer(15 * 60); // 15 minutos de cronômetro
+}
+
+function setupUtmLink() {
+  const offerBtn = document.querySelector("#phase-offer .btn-primary");
+  if (!offerBtn) return;
+
+  const currentUrlParams = window.location.search; // Pega os parâmetros da URL atual (?utm_source=...)
+  const baseUrl = offerBtn.getAttribute("href"); // Pega o link original (ex: https://nevorawise.com)
+
+  if (currentUrlParams) {
+    // Se a URL do botão já tiver '?', usa '&', caso contrário usa '?'
+    const separator = baseUrl.includes("?") ? "&" : "?";
+    // Limpa a interrogação inicial dos parâmetros para não duplicar
+    const cleanParams = currentUrlParams.startsWith("?") ? currentUrlParams.substring(1) : currentUrlParams;
+    
+    offerBtn.setAttribute("href", `${baseUrl}${separator}${cleanParams}`);
+  }
 }
 
 function startTimer(duration) {
