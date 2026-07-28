@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Exclusivo - Mapeamento de Perfil</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- FASE 1: LANDING / CAPA -->
+    <section id="phase-intro" class="card active">
+      <div class="tag">⚡ QUIZ EXCLUSIVO</div>
+      <h1>Descubra Como Performar sob Alta Pressão</h1>
+      <p class="subtitle">Responda a 4 perguntas rápidas para receber seu diagnóstico personalizado e acessar o método definitivo.</p>
+      <button class="btn-primary" onclick="startQuiz()">COMEÇAR AGORA →</button>
+      <span class="time-estimate">⏱️ Leva menos de 1 minuto</span>
+    </section>
+
+    <!-- FASE 2: PERGUNTAS DO QUIZ -->
+    <section id="phase-quiz" class="card">
+      <div class="progress-bar-container">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+      <div class="quiz-header">
+        <span id="question-number" class="question-count">Pergunta 1 de 4</span>
+      </div>
+      <h2 id="question-text">Título da Pergunta</h2>
+      <div id="options-container" class="options-grid">
+        <!-- As opções serão inseridas via JavaScript -->
+      </div>
+    </section>
+
+    <!-- FASE 3: CARREGAMENTO / ANALISANDO -->
+    <section id="phase-loading" class="card">
+      <div class="spinner"></div>
+      <h2>Analisando suas respostas...</h2>
+      <p id="loading-status">Mapeando seu perfil de desempenho...</p>
+      <div class="progress-bar-container">
+        <div id="loading-bar" class="progress-bar"></div>
+      </div>
+    </section>
+
+    <!-- FASE 4: DIAGNÓSTICO E OFERTA -->
+    <section id="phase-offer" class="card">
+      <div class="timer-banner">
+         Oferta Exclusiva Expira em: <span id="timer">14:59</span>
+      </div>
+
+      <div class="badge-success">✓ Seu Diagnóstico Está Pronto!</div>
+      <h2>Perfil Identificado com Sucesso</h2>
+      
+      <p class="diagnosis-text">
+        Com base nas suas respostas, você possui um alto potencial, mas perde rendimento em momentos decisivos devido à falta de um protocolo mental alinhado.
+      </p>
+
+      <div class="offer-box">
+  <h3>Método Performance Imparável</h3>
+  <p class="price-strike">De R$ 197,00 por apenas:</p>
+  <div class="price">R$ 29,90</div>
+  
+  <ul class="benefits-list">
+    <li>✅ Acesso imediato ao guia prático</li>
+    <li>✅ Protocolo personalizado</li>
+    <li>✅ Exercícios práticos e objetivos</li>
+    <li>✅ Garantia incondicional de 7 dias</li>
+  </ul>
+
+  <!-- LINK PARA O SEU SITE / PÁGINA DE VENDAS -->
+  <a href="https://nevorawise.com" class="btn-primary btn-glow" target="_blank">
+    VER DIAGNÓSTICO COMPLETO E SOLUÇÃO →
+  </a>
+      </div> 
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
